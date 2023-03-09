@@ -10,8 +10,8 @@ public class Desafiovitor {
 		        continue;
 			
 				}
-				System.out.print(zero);
-				System.out.print("  ");
+				System.out.println(zero);
+				
 
 		}
  }
