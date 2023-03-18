@@ -11,10 +11,6 @@ public class Desafiovitor2 {
 		var nome = sc.nextLine();
 		System.out.println("Sobrenome: ");
 		var sobrenome = sc.nextLine();
-
-		if (nome.matches("[a-zA-Z ]+") && sobrenome.matches("[a-zA-Z0-9 ]+")) {
-			throw new IllegalArgumentException("Erro: A entrada não pode conter numeros ou caracteres especiais");
-		}
 		
 		if (nome.length() <= 3 || nome.length() >= 15) {
 			throw new IllegalArgumentException("Too long or too short name");
@@ -23,6 +19,10 @@ public class Desafiovitor2 {
 		if (sobrenome.length() <= 3 || sobrenome.length() >= 15) {	
 			throw new IllegalArgumentException("Too long or too short name");
 		}
+
+		if(Pattern.matches(".*[a-zA-Z]+.*", name)){
+            throw new IllegalArgumentException("It's not possible to insert special character.");
+        }
 		
 		System.out.println(nome + " " + sobrenome);
 	}
