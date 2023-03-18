@@ -25,7 +25,7 @@ public class Desafiovitor2 {
 			if (nome.length() >= 3 && nome.length() <= 15) {
 			} else {
 				System.out.println("o nome contem minimo de 3 ou maior de 15");
-				return 0;
+				throw new Exception();
 				
 			}
 			

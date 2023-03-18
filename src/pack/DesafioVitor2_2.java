@@ -13,10 +13,10 @@ public class DesafioVitor2_2 {
 		num2 = sc.nextInt();
 		num3 = sc.nextInt();
 		
-		int numeros = (num1) + (num2) + (num3) = (0);
+		
 		//var num1 = sc.nextInt();
 		
-		if (numeros >= 0 && numeros <= 100) {
+		if ((num1 >= 0 && num1 <= 100)  && num2 >= 0 && num2 <= 100 ){
 		} else {
 			System.out.println("Este numero é invalido");
 			return;
