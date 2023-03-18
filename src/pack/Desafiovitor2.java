@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Desafiovitor2 {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Primeiro nome: ");
@@ -12,46 +12,18 @@ public class Desafiovitor2 {
 		System.out.println("Sobrenome: ");
 		var sobrenome = sc.nextLine();
 
+		if (nome.matches("[a-zA-Z ]+") && sobrenome.matches("[a-zA-Z0-9 ]+")) {
+			throw new IllegalArgumentException("Erro: A entrada não pode conter numeros ou caracteres especiais");
+		}
 		
-
-			if (nome.matches("[a-zA-Z ]+") && sobrenome.matches("[a-zA-Z0-9 ]+")) {
-			} else {
-				System.out.println("Erro: A entrada não pode conter numeros ou caracteres especiais");
-				return;
-			}
-			
-			
-			
-			if (nome.length() >= 3 && nome.length() <= 15) {
-			} else {
-				System.out.println("o nome contem minimo de 3 ou maior de 15");
-				throw new Exception();
-				
-			}
-			
-			
-			if (sobrenome.length() >= 3 && sobrenome.length() <= 15) {	
-			} else {
-				System.out.println("Sobrenome contem minimo de 3 ou maior de 15");
-				return;
-			}
-			
-			
-			System.out.println(nome + " " + sobrenome);
-			
+		if (nome.length() <= 3 || nome.length() >= 15) {
+			throw new IllegalArgumentException("Too long or too short name");
 		}
+		
+		if (sobrenome.length() <= 3 || sobrenome.length() >= 15) {	
+			throw new IllegalArgumentException("Too long or too short name");
 		}
-	
-
-
-
-	
-
-
-	
-
-
-
-	
-
-
+		
+		System.out.println(nome + " " + sobrenome);
+	}
+}
