@@ -1,5 +1,5 @@
 package pack;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,15 +7,11 @@ public class Teste {
 
 	public static void main(String[] args) {
 
-		int count = 0;
-		while (count < 100) {
-		    count++;
-		    if (count % 10 == 0) {
-		        continue;
+		public void onClick() {
+		    if(condition == true) {
+		        return;
 		    }
-		    System.out.println(count);
+		    string.setText("This string should not change if condition = true");
 		}
-
-
 	}
 }
