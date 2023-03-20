@@ -9,35 +9,45 @@ public class Main {
          * apresentar mensagem de erro
          */
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         // Validação do nome
         System.out.println("Digite seu nome: ");
-        var firstName = sc.nextLine();
+        var firstName = scan.nextLine();
+
+        var isNomeValido = validacoesNome(firstName); // false
+        if(!isNomeValido){
+            System.out.print("DJSKALDJASLJKDSA");
+            return;
+        }
 
         // Validação do sobrenome
         System.out.println("Digite seu sobrenome: ");
-        var lastName = sc.nextLine();
+        var lastName = scan.nextLine();
 
-        var esseNomeValido = validacoesNome(firstName, lastName);
+        var isSobrenomeValido = validacoesSobrenome(lastName);
+        if(!isSobrenomeValido){
+            System.out.print("DJSKALDJASLJKDSA");
+            return;
+        }
 
         // Validação dos numeros
         System.out.println("Digite um numero ");
-        var userInput1 = sc.nextInt();
+        var userInput1 = scan.nextInt();
         if ((userInput1 < 0 || userInput1 > 100)) {
             System.out.println("Numero é melhor que 0 ou maior que 100");
             return;
         }
 
         System.out.println("Digite o segundo numero: ");
-        var userInput2 = sc.nextInt();
+        var userInput2 = scan.nextInt();
         if ((userInput2 < 0 || userInput2 > 100)) {
             System.out.println("Numero é melhor que 0 ou maior que 100");
             return;
         }
 
         System.out.println("Digite o terceiro numero: ");
-        var userInput3 = sc.nextInt();
+        var userInput3 = scan.nextInt();
         if ((userInput3 < 0 || userInput3 > 100)) {
             System.out.println("Numero é melhor que 0 ou maior que 100");
             return;
@@ -47,24 +57,40 @@ public class Main {
     }
 
 
-    public static boolean validacoesNome(String nome, String sobrenome) {
-        if ((nome.length() < 2 || nome.length() > 15)) {
-            System.out.println("Nome contêm menos de 2 ou maior de 15 digitos");
+    public static boolean validacoesNome(String nome) {
+        if (nome.length() <= 2 || nome.length() >= 15) {
             return false;
         }
 
-        if ((sobrenome.length() < 2 || sobrenome.length() > 15)) {
-            System.out.println("Sobrenome contêm menos de 2 ou maior de 15 digitos");
-            return false;
-        }
+//        if (sobrenome.length() <= 2 || sobrenome.length() >= 15) {
+//            return false;
+//        }
 
         if (!Pattern.matches("[a-zA-Z]+", nome)) {
-            System.out.println("Erro: Contêm caracteres especiais");
             return false;
         }
 
+//        if (!Pattern.matches("[a-zA-Z]+", sobrenome)) {
+//            return false;
+//        }
+
+        return true;
+    }
+
+    public static boolean validacoesSobrenome(String sobrenome) {
+//        if (nome.length() <= 2 || nome.length() >= 15) {
+//            return false;
+//        }
+
+        if (sobrenome.length() <= 2 || sobrenome.length() >= 15) {
+            return false;
+        }
+
+//        if (!Pattern.matches("[a-zA-Z]+", nome)) {
+//            return false;
+//        }
+
         if (!Pattern.matches("[a-zA-Z]+", sobrenome)) {
-            System.out.println("Erro: Contêm caracteres especiais");
             return false;
         }
 
