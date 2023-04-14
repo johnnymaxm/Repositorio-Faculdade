@@ -47,7 +47,8 @@ public class Ex01Conta {
 
 
                 if (saldo >= transferencia) {
-                    System.out.println("Valor transferido: " + (transferencia) + "\nSaldo atual da conta: " + (saldo -  transferencia));
+                    saldo = saldo - transferencia;
+                    System.out.println("Valor transferido: " + (transferencia) + "\nSaldo atual da conta: " + (saldo));
                 } else {
                     System.out.println("Saldo insuficiente");
                 }
@@ -59,7 +60,8 @@ public class Ex01Conta {
             if (opcao == 3) {
                 System.out.println("Digite valor que deseja depositar: ");
                 depositar = scan.nextDouble();
-                System.out.println("Valor depositado: R$" + depositar + "\nValor atual da conta: R$" + (saldo +  depositar));
+                saldo = saldo + depositar;
+                System.out.println("Valor depositado: R$" + depositar + "\nValor atual da conta: R$" + (saldo));
                 continue;
             }
             if (opcao > 4) {
