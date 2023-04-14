@@ -1,3 +1,5 @@
+package TrabalhoAlura;
+
 import java.util.Scanner;
 
 public class Ex01Conta {
