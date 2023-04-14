@@ -63,7 +63,7 @@ public class Ex01Conta {
             if (opcao > 4) {
                 System.out.println("Opção invalida");
             }
-            System.out.println("Atendimento encerrad");
+            System.out.println("Atendimento encerrado");
 
         }
     }
