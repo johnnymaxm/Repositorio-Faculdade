@@ -1,5 +1,6 @@
 package TrabalhoAlura;
 
+import java.text.BreakIterator;
 import java.util.Scanner;
 
 public class Ex01Conta {
@@ -66,8 +67,10 @@ public class Ex01Conta {
             }
             if (opcao > 4) {
                 System.out.println("Opção invalida");
+                continue;
             }
             System.out.println("Atendimento encerrado");
+            break;
 
         }
     }
